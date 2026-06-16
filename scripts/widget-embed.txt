@@ -1,0 +1,2 @@
+<link rel="stylesheet" href="https://YOUR-DOMAIN/widget/widget.css">
+<script src="https://YOUR-DOMAIN/widget/widget.js" defer></script>

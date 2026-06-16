@@ -1,0 +1,413 @@
+{
+  "calendar": [
+    {
+      "id": 1,
+      "title": "بداية الفصل الدراسي الثاني",
+      "start_date": "2026-02-15",
+      "end_date": "2026-02-15",
+      "description": "يبدأ تسجيل الطلاب للفصل الدراسي الثاني رسمياً"
+    },
+    {
+      "id": 2,
+      "title": "آخر موعد لإضافة وحذف المواد",
+      "start_date": "2026-02-28",
+      "end_date": "2026-02-28",
+      "description": "آخر يوم يمكن فيه للطالب إضافة أو حذف مواد دراسية دون رسوم"
+    },
+    {
+      "id": 3,
+      "title": "الإجازة الصيفية",
+      "start_date": "2026-04-01",
+      "end_date": "2026-04-07",
+      "description": "العطلة الصيفية الرسمية لجميع الكليات"
+    },
+    {
+      "id": 4,
+      "title": "الأسبوع الأخير للتدريس",
+      "start_date": "2026-05-10",
+      "end_date": "2026-05-16",
+      "description": "آخر أسبوع تدريس في الفصل الدراسي الثاني قبل بدء الامتحانات"
+    },
+    {
+      "id": 5,
+      "title": "امتحانات نهاية الفصل الثاني",
+      "start_date": "2026-05-21",
+      "end_date": "2026-06-10",
+      "description": "فترة الامتحانات النهائية للفصل الدراسي الثاني لجميع الكليات"
+    }
+  ],
+  "announcements": [
+    {
+      "id": 1,
+      "title": "منح دراسية للطلاب المتفوقين",
+      "body": "تعلن جامعة الخليل عن فتح باب التقديم للمنح الدراسية للطلاب ذوي المعدل التراكمي فوق 85%. على الطلاب المؤهلين تقديم طلباتهم عبر البوابة الإلكترونية قبل نهاية الشهر.",
+      "published_at": "2026-04-20",
+      "category": "academic"
+    },
+    {
+      "id": 2,
+      "title": "ورشة عمل في الذكاء الاصطناعي",
+      "body": "تقيم كلية تكنولوجيا المعلومات ورشة عمل حول تطبيقات الذكاء الاصطناعي يوم الأربعاء القادم الساعة العاشرة صباحاً في قاعة المؤتمرات. الحضور مجاني لجميع الطلاب.",
+      "published_at": "2026-04-24",
+      "category": "events"
+    },
+    {
+      "id": 3,
+      "title": "تحديث نظام البوابة الإلكترونية",
+      "body": "ستكون البوابة الإلكترونية للجامعة خارج الخدمة يوم الجمعة القادم من الساعة 12 ليلاً حتى 6 صباحاً لإجراء أعمال الصيانة والتحديث.",
+      "published_at": "2026-04-22",
+      "category": "technical"
+    },
+    {
+      "id": 4,
+      "title": "إطلاق برنامج الإرشاد الأكاديمي",
+      "body": "يسعد مركز الإرشاد الأكاديمي إعلان انطلاق برنامج الإرشاد للفصل الثاني. يمكن للطلاب حجز مواعيد مع المرشدين الأكاديميين عبر البوابة أو التواصل مع كليتهم مباشرة.",
+      "published_at": "2026-04-15",
+      "category": "academic"
+    }
+  ],
+  "faculty": [
+    {
+      "id": 1,
+      "name": "د. نبيل حساسنة",
+      "name_en": "Dr. Nabil Hasasneh",
+      "title": "أستاذ مشارك",
+      "title_en": "Associate Professor",
+      "college": "كلية تكنولوجيا المعلومات",
+      "college_en": "College of Information Technology",
+      "department": "قسم علم الحاسوب",
+      "department_en": "Computer Science Department",
+      "role": "مدير دائرة الجودة والتطوير",
+      "email": "nhasasneh@hebron.edu",
+      "specialization": "هندسة الحاسوب",
+      "office_hours": "الأحد والثلاثاء 10:00-12:00"
+    },
+    {
+      "id": 2,
+      "name": "د. خليل مصري",
+      "name_en": "Dr. Khalil Massri",
+      "title": "أستاذ مشارك",
+      "title_en": "Associate Professor",
+      "college": "كلية تكنولوجيا المعلومات",
+      "college_en": "College of Information Technology",
+      "department": "قسم علم الحاسوب",
+      "department_en": "Computer Science Department",
+      "role": "رئيس قسم علم الحاسوب",
+      "email": "kmassri@hebron.edu",
+      "specialization": "هندسة الحاسوب وأمن الشبكات",
+      "office_hours": "الاثنين والأربعاء 9:00-11:00"
+    },
+    {
+      "id": 3,
+      "name": "د. معتز قفيشة",
+      "name_en": "Dr. Mutaz Qafisheh",
+      "title": "أستاذ مشارك",
+      "title_en": "Associate Professor",
+      "college": "كلية الحقوق والعلوم السياسية",
+      "college_en": "College of Law and Political Science",
+      "department": "قسم القانون الدولي",
+      "department_en": "Department of International Law",
+      "role": "عضو هيئة تدريس",
+      "email": "mqafisheh@hebron.edu",
+      "specialization": "القانون الدولي وحقوق الإنسان",
+      "office_hours": "الأحد والثلاثاء 11:00-13:00"
+    },
+    {
+      "id": 4,
+      "name": "د. أحمد سويطي",
+      "name_en": "Dr. Ahmad Swity",
+      "title": "دكتور",
+      "title_en": "Dr.",
+      "college": "كلية الحقوق والعلوم السياسية",
+      "college_en": "College of Law and Political Science",
+      "department": "قسم الفقه والقانون",
+      "department_en": "Department of Jurisprudence and Law",
+      "role": "عميد كلية الحقوق والعلوم السياسية",
+      "email": "aswity@hebron.edu",
+      "specialization": "الفقه والقانون",
+      "office_hours": "الاثنين والخميس 10:00-12:00"
+    },
+    {
+      "id": 5,
+      "name": "د. بلال شوباكي",
+      "name_en": "Dr. Belal Shobaki",
+      "title": "أستاذ مساعد",
+      "title_en": "Assistant Professor",
+      "college": "كلية الحقوق والعلوم السياسية",
+      "college_en": "College of Law and Political Science",
+      "department": "قسم العلوم السياسية",
+      "department_en": "Department of Political Science",
+      "role": "رئيس قسم العلوم السياسية",
+      "email": "bshobaki@hebron.edu",
+      "specialization": "الإسلام السياسي والقضية الفلسطينية",
+      "office_hours": "الأحد والثلاثاء والخميس 9:00-10:00"
+    },
+    {
+      "id": 6,
+      "name": "د. أشرف عابدين",
+      "name_en": "Dr. Ashraf Abedin",
+      "title": "دكتور",
+      "title_en": "Dr.",
+      "college": "كلية العلوم والتكنولوجيا",
+      "college_en": "College of Science and Technology",
+      "department": "إدارة الكلية",
+      "department_en": "College Administration",
+      "role": "عميد كلية العلوم والتكنولوجيا",
+      "email": "aabedin@hebron.edu",
+      "specialization": "العلوم والتكنولوجيا",
+      "office_hours": "الاثنين والأربعاء 10:00-12:00"
+    },
+    {
+      "id": 7,
+      "name": "د. أحمد عياد",
+      "name_en": "Dr. Ahmad Iyad",
+      "title": "دكتور",
+      "title_en": "Dr.",
+      "college": "كلية العلوم والتكنولوجيا",
+      "college_en": "College of Science and Technology",
+      "department": "قسم الكيمياء",
+      "department_en": "Department of Chemistry",
+      "role": "رئيس قسم الكيمياء",
+      "email": "aiyad@hebron.edu",
+      "specialization": "الكيمياء",
+      "office_hours": "الأحد والثلاثاء 8:00-10:00"
+    },
+    {
+      "id": 8,
+      "name": "د. حسن المناصرة",
+      "name_en": "Dr. Hassan Al-Manasra",
+      "title": "دكتور",
+      "title_en": "Dr.",
+      "college": "كلية العلوم والتكنولوجيا",
+      "college_en": "College of Science and Technology",
+      "department": "قسم الرياضيات",
+      "department_en": "Department of Mathematics",
+      "role": "رئيس قسم الرياضيات",
+      "email": "hmanasra@hebron.edu",
+      "specialization": "الرياضيات",
+      "office_hours": "الاثنين والأربعاء والخميس 11:00-12:00"
+    },
+    {
+      "id": 9,
+      "name": "د. حنين نور",
+      "name_en": "Dr. Haneen Nour",
+      "title": "دكتورة",
+      "title_en": "Dr.",
+      "college": "كلية الصيدلة والعلوم الطبية",
+      "college_en": "College of Pharmacy and Medical Sciences",
+      "department": "إدارة الكلية",
+      "department_en": "College Administration",
+      "role": "عميدة كلية الصيدلة والعلوم الطبية",
+      "email": "hnour@hebron.edu",
+      "specialization": "الصيدلة والعلوم الطبية",
+      "office_hours": "الاثنين والأربعاء 9:00-11:00"
+    },
+    {
+      "id": 10,
+      "name": "د. علاء خريوش",
+      "name_en": "Dr. Alaa Khraiwish",
+      "title": "دكتور",
+      "title_en": "Dr.",
+      "college": "كلية الصيدلة والعلوم الطبية",
+      "college_en": "College of Pharmacy and Medical Sciences",
+      "department": "قسم الصيدلة",
+      "department_en": "Department of Pharmacy",
+      "role": "رئيس قسم الصيدلة",
+      "email": "akhraiwish@hebron.edu",
+      "specialization": "الصيدلة",
+      "office_hours": "الأحد والثلاثاء 10:00-12:00"
+    },
+    {
+      "id": 11,
+      "name": "د. رغد الدويك",
+      "name_en": "Dr. Raghad Al-Dweik",
+      "title": "دكتورة",
+      "title_en": "Dr.",
+      "college": "كلية الآداب",
+      "college_en": "College of Arts",
+      "department": "إدارة الكلية",
+      "department_en": "College Administration",
+      "role": "عميدة كلية الآداب",
+      "email": "rdweik@hebron.edu",
+      "specialization": "الآداب واللغات",
+      "office_hours": "الاثنين والخميس 10:00-12:00"
+    },
+    {
+      "id": 12,
+      "name": "د. نسيم بني عودة",
+      "name_en": "Dr. Naseem Bani Odeh",
+      "title": "دكتور",
+      "title_en": "Dr.",
+      "college": "كلية الآداب",
+      "college_en": "College of Arts",
+      "department": "قسم اللغة العربية",
+      "department_en": "Department of Arabic Language",
+      "role": "رئيس قسم اللغة العربية",
+      "email": "nbaniodeh@hebron.edu",
+      "specialization": "اللغة العربية وآدابها",
+      "office_hours": "الأحد والثلاثاء والأربعاء 9:00-10:00"
+    }
+  ],
+  "fees": [
+    {
+      "id": 1,
+      "fee_type": "طلب التحاق بالجامعة",
+      "fee_type_en": "University Application Fee",
+      "amount_jod": 30,
+      "currency": "JOD",
+      "payment_timing": "عند تقديم طلب الالتحاق",
+      "notes": "تُدفع مرة واحدة عند تقديم طلب القبول ولا تُستردّ"
+    },
+    {
+      "id": 2,
+      "fee_type": "حجز مقعد",
+      "fee_type_en": "Seat Reservation Fee",
+      "amount_jod": 200,
+      "currency": "JOD",
+      "payment_timing": "مرة واحدة عند قبول الطالب",
+      "notes": "تُدفع مرة واحدة فقط عند القبول للاحتفاظ بالمقعد، وتُحسب ضمن رسوم الفصل الأول"
+    },
+    {
+      "id": 3,
+      "fee_type": "رسوم الساعات المعتمدة",
+      "fee_type_en": "Credit Hour Fee",
+      "amount_jod": 65,
+      "currency": "JOD",
+      "payment_timing": "كل فصل دراسي",
+      "notes": "تُحسب بضرب عدد الساعات المسجّلة في 65 دينار أردني لكل ساعة معتمدة"
+    },
+    {
+      "id": 4,
+      "fee_type": "رسوم خدمات وتأمينات",
+      "fee_type_en": "Services and Insurance Fee",
+      "amount_jod": 150,
+      "currency": "JOD",
+      "payment_timing": "كل فصل دراسي",
+      "notes": "تشمل رسوم المكتبة والأنشطة الطلابية وخدمات الحرم الجامعي"
+    },
+    {
+      "id": 5,
+      "fee_type": "طلب مراجعة امتحان نهائي",
+      "fee_type_en": "Final Exam Review Request Fee",
+      "amount_jod": 30,
+      "currency": "JOD",
+      "payment_timing": "عند تقديم الطلب",
+      "notes": "تُدفع لكل مساق يُطلب مراجعة امتحانه، وتُستردّ إذا ثبت الخطأ"
+    },
+    {
+      "id": 6,
+      "fee_type": "تصديق الشهادات أو الوثائق الثبوتية",
+      "fee_type_en": "Certificate / Document Attestation Fee",
+      "amount_jod": 20,
+      "currency": "JOD",
+      "payment_timing": "عند تقديم الطلب",
+      "notes": "تُحسب لكل وثيقة على حدة"
+    },
+    {
+      "id": 7,
+      "fee_type": "رسم الشهادة الأصلية (الكرتونة)",
+      "fee_type_en": "Original Degree Certificate Fee",
+      "amount_jod": 50,
+      "currency": "JOD",
+      "payment_timing": "عند التخرج",
+      "notes": "تُدفع مرة واحدة عند استلام الشهادة الأصلية بعد التخرج"
+    },
+    {
+      "id": 8,
+      "fee_type": "رسوم تسجيل لكل فصل دراسي",
+      "fee_type_en": "Semester Registration Fee",
+      "amount_jod": 100,
+      "currency": "JOD",
+      "payment_timing": "كل فصل دراسي",
+      "notes": "رسم ثابت يُدفع عند بدء التسجيل في كل فصل بصرف النظر عن عدد الساعات"
+    },
+    {
+      "id": 9,
+      "fee_type": "رسوم طلب التحويل",
+      "fee_type_en": "Transfer Request Fee",
+      "amount_jod": 75,
+      "currency": "JOD",
+      "payment_timing": "عند تقديم طلب التحويل",
+      "notes": "تشمل التحويل بين التخصصات أو بين الكليات داخل الجامعة"
+    },
+    {
+      "id": 10,
+      "fee_type": "رسوم تقديم عذر غياب عن امتحان نهائي",
+      "fee_type_en": "Final Exam Absence Excuse Fee",
+      "amount_jod": 10,
+      "currency": "JOD",
+      "payment_timing": "عند تقديم العذر",
+      "notes": "يُقدَّم العذر خلال 48 ساعة من موعد الامتحان مع الوثائق المؤيدة"
+    },
+    {
+      "id": 11,
+      "fee_type": "رسوم انتقال من جامعات أخرى",
+      "fee_type_en": "Transfer from Other Universities Fee",
+      "amount_jod": 150,
+      "currency": "JOD",
+      "payment_timing": "عند تقديم ملف الانتقال",
+      "notes": "يشمل دراسة وتقييم المواد المنقولة من الجامعة السابقة"
+    },
+    {
+      "id": 12,
+      "fee_type": "رسم إعادة قيد",
+      "fee_type_en": "Re-enrollment Fee",
+      "amount_jod": 100,
+      "currency": "JOD",
+      "payment_timing": "عند تقديم طلب إعادة القيد",
+      "notes": "للطلاب الذين انقطعوا عن الدراسة فصلاً أو أكثر ويرغبون في العودة"
+    },
+    {
+      "id": 13,
+      "fee_type": "رسوم التأمين الصحي",
+      "fee_type_en": "Health Insurance Fee",
+      "amount_jod": 80,
+      "currency": "JOD",
+      "payment_timing": "سنوياً",
+      "notes": "تغطي خدمات العيادة الجامعية وبعض حالات الطوارئ للطلاب المسجّلين"
+    },
+    {
+      "id": 14,
+      "fee_type": "رسوم تأجيل فصل دراسي",
+      "fee_type_en": "Semester Deferral Fee",
+      "amount_jod": 50,
+      "currency": "JOD",
+      "payment_timing": "عند تقديم طلب التأجيل",
+      "notes": "يُقدَّم الطلب قبل انتهاء فترة الإضافة والحذف للفصل المعني"
+    }
+  ],
+  "admissions": [
+    {
+      "id": 1,
+      "term": "الفصل الأول 2026-2027",
+      "event": "فتح باب القبول للطلاب الجدد",
+      "open_date": "2026-07-01",
+      "close_date": "2026-08-15",
+      "notes": "يشترط تقديم شهادة الثانوية العامة وما يعادلها مع معدل لا يقل عن 65%"
+    },
+    {
+      "id": 2,
+      "term": "الفصل الأول 2026-2027",
+      "event": "آخر موعد لتسليم الوثائق الورقية",
+      "open_date": "2026-08-01",
+      "close_date": "2026-08-20",
+      "notes": "تُسلَّم الوثائق شخصياً لعمادة القبول والتسجيل في المبنى الرئيسي. لا يُقبل أي وثيقة بعد هذا التاريخ."
+    },
+    {
+      "id": 3,
+      "term": "الفصل الأول 2026-2027",
+      "event": "إعلان نتائج القبول الأولية",
+      "open_date": "2026-09-01",
+      "close_date": "2026-09-01",
+      "notes": "تُعلن القوائم الأولية للطلاب المقبولين عبر الموقع الرسمي وبوابة القبول"
+    },
+    {
+      "id": 4,
+      "term": "الفصل الأول 2026-2027",
+      "event": "بدء التسجيل للطلاب المقبولين",
+      "open_date": "2026-09-05",
+      "close_date": "2026-09-15",
+      "notes": "يجب على الطلاب المقبولين إتمام التسجيل وسداد الرسوم خلال هذه الفترة للاحتفاظ بمقعدهم"
+    }
+  ]
+}

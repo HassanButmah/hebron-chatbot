@@ -1,0 +1,6 @@
+
+https://[NEW_NGROK_URL]/webhook/whatsapp
+https://[NEW_NGROK_URL]/webhook/messenger
+https://api.telegram.org/bot[BOT_TOKEN]/setWebhook?url=[NEW_NGROK_URL]/webhook/telegram
+
+Set BOT_TOKEN and Meta tokens in `.env` (see `.env.example`). Do not commit `.env`.

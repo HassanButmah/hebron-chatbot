@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مساعد جامعة الخليل</title>
+
+  <!-- Widget stylesheet -->
+  <link rel="stylesheet" href="/widget/widget.css" />
+
+  <style>
+    /* Minimal host-page styles for the standalone test page */
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: #f0f4f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .demo-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      text-align: center;
+      color: #1B5E20;
+    }
+    .demo-page h1 { font-size: 2rem; margin-bottom: 12px; }
+    .demo-page p  { font-size: 1rem; color: #444; max-width: 480px; }
+    .demo-badge {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 8px 18px;
+      background: #E8F5E9;
+      border: 1.5px solid #2E7D32;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #1B5E20;
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-page">
+  <h1>مساعد جامعة الخليل — خليلك</h1>
+  <p>
+    صفحة اختبار مستقلة للـ widget. انقر على الأيقونة في الزاوية السفلية
+    لفتح نافذة المحادثة.
+  </p>
+  <div class="demo-badge">Standalone Widget Test Page</div>
+</div>
+
+<!-- Widget script — auto-detects API base from script src origin -->
+<script src="/widget/widget.js" defer></script>
+
+<!--
+  To override the API origin (e.g. production cross-domain), add before the script tag:
+
+  <script>window.HCW_API_BASE = 'https://api.hebron-chatbot.example.com';</script>
+-->
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+@startuml hebron-chatbot-erd-chen
+' Hebron Chatbot — Standard Chen ERD (layout-optimized)
+' Render: https://www.plantuml.com/plantuml/uml/
+
+title Hebron Chatbot — Standard Chen ERD Notation
+
+top to bottom direction
+skinparam shadowing false
+skinparam linetype polyline
+skinparam nodesep 28
+skinparam ranksep 32
+skinparam ArrowColor #444444
+skinparam packageStyle rectangle
+
+skinparam rectangle {
+  BackgroundColor #DAE8FC
+  BorderColor #6C8EBF
+  BorderThickness 1.5
+  RoundCorner 0
+}
+skinparam hexagon {
+  BackgroundColor #FFF2CC
+  BorderColor #D6B656
+  BorderThickness 1.5
+}
+skinparam circle {
+  BackgroundColor #F5F5F5
+  BorderColor #666666
+  FontColor #333333
+  FontSize 10
+}
+
+' ═══════════════════════════════════════════════════════════════
+' ROW 1 — External ingestion → RAG hub
+' ═══════════════════════════════════════════════════════════════
+
+package "External" as pkg_ext #E8F4FD {
+  circle "* endpoint_url" as a_uapi_1
+  circle "auth_token" as a_uapi_2
+  rectangle "University API\n<<external>>" as e_uapi #E8F4FD
+  e_uapi -- a_uapi_1
+  e_uapi -- a_uapi_2
+
+  hexagon "provides" as r_provides
+
+  circle "* source_id" as a_lds_1
+  circle "source_type" as a_lds_2
+  rectangle "Live Data Source" as e_lds #DAE8FC
+  e_lds -- a_lds_1
+  e_lds -- a_lds_2
+
+  hexagon "runs" as r_runs
+
+  circle "status" as a_sr_1
+  rectangle "Sync Run" as e_sr #DAE8FC
+  e_sr -- a_sr_1
+
+  e_uapi -down-> r_provides : 1
+  r_provides -down-> e_lds : N
+  e_lds -down-> r_runs : 1
+  r_runs -down-> e_sr : N
+
+  e_uapi -[hidden]down- r_provides
+  r_provides -[hidden]down- e_lds
+  e_lds -[hidden]down- r_runs
+  r_runs -[hidden]down- e_sr
+}
+
+hexagon "syncs to" as r_syncs
+
+package "RAG Hub" as pkg_rag #FFF8E8 {
+  circle "embedding" as a_vchunk_1
+  circle "metadata" as a_vchunk_2
+  rectangle "Vector Chunk" as e_vchunk #FFE6CC
+  e_vchunk -- a_vchunk_1
+  e_vchunk -- a_vchunk_2
+}
+
+e_sr -right-> r_syncs : 1
+r_syncs -right-> e_vchunk : N
+e_sr -[hidden]right- r_syncs
+r_syncs -[hidden]right- e_vchunk
+
+' ═══════════════════════════════════════════════════════════════
+' ROW 2 — Static knowledge → RAG hub
+' ═══════════════════════════════════════════════════════════════
+
+package "Administration & Static Knowledge" as pkg_admin #F3F0FF {
+  circle "* admin_id" as a_admin_1
+  rectangle "Administrator" as e_admin #E1D5E7
+  e_admin -- a_admin_1
+
+  hexagon "uploads" as r_uploads
+
+  circle "* document_id" as a_kdoc_1
+  circle "status" as a_kdoc_2
+  rectangle "Knowledge Doc" as e_kdoc #E1D5E7
+  e_kdoc -- a_kdoc_1
+  e_kdoc -- a_kdoc_2
+
+  hexagon "has history" as r_history
+
+  circle "version_number" as a_drev_1
+  rectangle "Doc Revision" as e_drev #E1D5E7
+  e_drev -- a_drev_1
+
+  hexagon "stored as" as r_stored
+
+  circle "file_path" as a_ufile_1
+  rectangle "Uploaded File" as e_ufile #E1D5E7
+  e_ufile -- a_ufile_1
+
+  hexagon "chunked into" as r_chunked
+
+  e_admin -down-> r_uploads : 1
+  r_uploads -down-> e_kdoc : N
+  e_kdoc -down-> r_history : 1
+  r_history -down-> e_drev : N
+  e_kdoc -down-> r_stored : 1
+  r_stored -down-> e_ufile : 1
+  e_kdoc -down-> r_chunked : 1
+
+  e_admin -[hidden]down- r_uploads
+  r_uploads -[hidden]down- e_kdoc
+  e_kdoc -[hidden]down- r_history
+  r_history -[hidden]down- e_drev
+  e_kdoc -[hidden]down- r_stored
+  r_stored -[hidden]down- e_ufile
+  e_kdoc -[hidden]down- r_chunked
+}
+
+r_chunked -right-> e_vchunk
+
+' ═══════════════════════════════════════════════════════════════
+' ROW 3 — Chatbot hub + configuration
+' ═══════════════════════════════════════════════════════════════
+
+package "Chatbot Core" as pkg_bot #FFF2CC {
+  circle "llm_provider" as a_bot_1
+  circle "llm_model" as a_bot_2
+  rectangle "Chatbot\n<<system actor>>" as e_bot #FFF2CC
+  e_bot -- a_bot_1
+  e_bot -- a_bot_2
+
+  hexagon "retrieves" as r_retrieves
+  e_bot -down-> r_retrieves
+  e_bot -[hidden]down- r_retrieves
+}
+
+r_retrieves -right-> e_vchunk : N→1
+
+package "Configuration" as pkg_cfg #F0FFF4 {
+  circle "question" as a_faq_1
+  rectangle "FAQ Entry" as e_faq #D5E8D4
+  e_faq -- a_faq_1
+
+  circle "* trigger_phrase" as a_ro_1
+  rectangle "Response Override" as e_ro #D5E8D4
+  e_ro -- a_ro_1
+
+  circle "* key" as a_sc_1
+  rectangle "System Config" as e_sc #D5E8D4
+  e_sc -- a_sc_1
+
+  circle "reason" as a_uq_1
+  rectangle "Unanswered Question" as e_uq #D5E8D4
+  e_uq -- a_uq_1
+
+  e_faq -[hidden]down- e_ro
+  e_ro -[hidden]down- e_sc
+  e_sc -[hidden]down- e_uq
+}
+
+e_bot -[hidden]right- e_faq
+e_bot -[hidden]right- e_sc
+
+hexagon "uses" as r_uses
+hexagon "matches" as r_matches
+hexagon "configured by" as r_configured
+hexagon "logs" as r_logs
+
+e_bot ..> r_uses
+r_uses ..> e_faq
+e_bot ..> r_matches
+r_matches ..> e_ro
+e_bot ..> r_configured
+r_configured ..> e_sc
+e_bot ..> r_logs
+r_logs ..> e_uq
+
+hexagon "manages" as r_manages
+e_admin ..> r_manages
+r_manages ..> e_kdoc
+r_manages ..> e_lds
+r_manages ..> e_faq
+r_manages ..> e_ro
+r_manages ..> e_sc
+r_manages ..> e_uq
+
+e_admin -[hidden]right- r_manages
+r_manages -[hidden]right- e_faq
+
+' ═══════════════════════════════════════════════════════════════
+' ROW 4 — Conversation (horizontal spine)
+' ═══════════════════════════════════════════════════════════════
+
+package "Conversation" as pkg_conv #FFF0F0 {
+  circle "* user_id" as a_eu_1
+  rectangle "End User\n<<logical>>" as e_eu #F8CECC
+  e_eu -- a_eu_1
+
+  hexagon "starts" as r_starts
+
+  circle "* session_id" as a_conv_1
+  rectangle "Conversation" as e_conv #F8CECC
+  e_conv -- a_conv_1
+
+  hexagon "contains" as r_contains
+
+  circle "role" as a_msg_1
+  circle "content" as a_msg_2
+  rectangle "Message" as e_msg #F8CECC
+  e_msg -- a_msg_1
+  e_msg -- a_msg_2
+
+  hexagon "receives" as r_receives
+
+  circle "rating" as a_fb_1
+  rectangle "Feedback" as e_fb #F8CECC
+  e_fb -- a_fb_1
+
+  e_eu -right-> r_starts : 1
+  r_starts -right-> e_conv : N
+  e_conv -right-> r_contains : 1
+  r_contains -right-> e_msg : N
+  e_msg -right-> r_receives : 1
+  r_receives -right-> e_fb : N
+
+  e_eu -[hidden]right- r_starts
+  r_starts -[hidden]right- e_conv
+  e_conv -[hidden]right- r_contains
+  r_contains -[hidden]right- e_msg
+  e_msg -[hidden]right- r_receives
+  r_receives -[hidden]right- e_fb
+}
+
+hexagon "asks" as r_asks
+hexagon "generates" as r_generates
+hexagon "reads" as r_reads
+
+e_eu ..> r_asks
+r_asks ..> e_bot
+e_bot ..> r_generates
+r_generates ..> e_msg
+e_bot ..> r_reads
+r_reads ..> e_conv
+
+e_bot -[hidden]down- e_eu
+
+' Vertical alignment of domain rows
+pkg_ext -[hidden]down- pkg_admin
+pkg_admin -[hidden]down- pkg_bot
+pkg_bot -[hidden]down- pkg_conv
+pkg_ext -[hidden]right- pkg_rag
+pkg_admin -[hidden]right- pkg_rag
+pkg_bot -[hidden]right- pkg_cfg
+pkg_bot -[hidden]right- pkg_rag
+
+legend bottom left
+  |= Shape |= Chen ERD meaning |
+  | Rectangle | Entity |
+  | Hexagon | Relationship (diamond) |
+  | Circle | Attribute (ellipse) |
+  | *name | Primary key |
+  | Solid arrow | Structural link |
+  | Dashed arrow | Runtime link (no FK) |
+  | Package band | Domain grouping |
+endlegend
+
+@enduml

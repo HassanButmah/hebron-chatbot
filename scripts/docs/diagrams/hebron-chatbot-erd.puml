@@ -1,0 +1,13 @@
+@startuml hebron-chatbot-erd
+' Canonical Chen ERD: docs/diagrams/hebron-chatbot-erd-chen.puml
+' This stub preserves the original filename for docs and canvas references.
+' Render hebron-chatbot-erd-chen.puml at https://www.plantuml.com/plantuml/uml/
+
+note as redirect
+  **Hebron Chatbot ERD**
+  Standard Chen notation lives in:
+  **hebron-chatbot-erd-chen.puml**
+  Open that file to render the full diagram.
+end note
+
+@enduml
